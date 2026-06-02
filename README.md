@@ -23,7 +23,7 @@ Rate Wala compares live AED exchange rates across 10 UAE providers — exchange 
 **Providers compared:** Wise · Al Ansari Exchange · Lulu Exchange · Careem Pay · TapTap Send · Western Union · Orient Exchange · Botim Pay · Al Fardan Exchange · Remitly
 
 **Core features:**
-- Live rate comparison, updated every 30 minutes
+- Live rate comparison, updated every 60 minutes
 - 30-day rate gap insight card with behavioural framing
 - 14-day rate trend badge (rate context relative to recent history)
 - Rate alerts via email when a corridor hits a target
@@ -41,7 +41,7 @@ Rate Wala compares live AED exchange rates across 10 UAE providers — exchange 
 The rate gap card reads *"What not comparing actually **costs** you"* rather than *"What you could save."* Behavioural economics (Kahneman/Tversky) shows loss framing drives 2x stronger action response. The annual cost is contextualised in local terms — *"That's a month's school fees in Pakistan"* — because abstract currency numbers don't move people, but relatable life costs do.
 
 ### 2. 30-day historical context, not today's live spread
-The insight card uses the 30-day worst average vs best absolute rate — not today's live comparison. This tells a monthly story rather than fluctuating with each refresh, and is more defensible as a "this is what actually happens over time" claim. It separates the educational layer (what you're leaving behind structurally) from the transactional layer (today's best rate).
+The insight card uses the 30-day average vs best absolute rate — not today's live comparison. This tells a monthly story rather than fluctuating with each refresh, and is more defensible as a "this is what actually happens over time" claim. It separates the educational layer (what you're leaving behind structurally) from the transactional layer (today's best rate).
 
 ### 3. Reliability over simplicity in data pipeline
 Early architecture had a single point of failure that caused a 12-hour data blackout when the primary data source went offline. The fix decoupled the fallback to run independently, checking data freshness directly rather than depending on the primary job's status. The lesson: in a product where stale data = broken product, pipeline reliability is a user experience decision, not just an infrastructure one.
@@ -81,7 +81,7 @@ Three concurrent A/B experiments via PostHog:
 ## Roadmap
 
 - [ ] Affiliate/referral integration with transfer providers
-- [ ] KSA expansion — SAR corridors
+- [ ] Market Expansion
 - [ ] Weekly best-rate newsletter
 - [ ] Daily push notifications
 - [ ] Provider-specific SEO landing pages
